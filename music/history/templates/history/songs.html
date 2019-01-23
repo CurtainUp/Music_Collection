@@ -1,0 +1,16 @@
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'history/style.css' %}">
+
+<h1>SONGS</h1>
+
+{% if songs %}
+    <ul>
+    {% for song in songs %}
+        <li>{{ song.song_title }} by {{song.artist.artist_name}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No songs in the database.</p>
+{% endif %}

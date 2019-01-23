@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'history/style.css' %}">
+
+<h1>{{artist_name}}</h1>
+{% if songs %}
+    <ul>
+    {% for song in songs %}
+        <li>{{ song.song_title }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No songs have been added for this artist.</p>
+{% endif %}
